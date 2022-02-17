@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블 연습</title>
+</head>
+<body>
+    <h1>일반적 테이블</h1>
+    <!-- 테이블-->
+    <table border="1">
+        <!-- 테이블 제목 : caption -->
+        <caption>성적표</caption>
+        <!-- 테이블 헤더: thead -->
+        <thead> <!-- 행을 먼저 만들고 열을 만들어야 함-->
+            <!-- 행정보 : tr-->
+            <tr>
+                <!-- 테이블 헤더 : th-->
+                <th>이름</th>
+                <th>나이</th>
+                <th>점수</th>
+            </tr>
+        </thead>
+        <!-- 테이블 바디-->
+
+        <tbody>
+            <tr>
+                <!-- 테이블 데이터 : td-->
+                <td>철수</td>
+                <td>23</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <td>영희</td>
+                <td>22</td>
+                <td>90</td>
+            </tr>
+        </tbody>
+        <!-- 테이블 푸터 : tfoot -->
+        <tfoot>
+            <tr>
+                <td>평균</td>
+                <td></td>
+                <td>85</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <h1>복잡한 테이블</h1>
+    <table border  ="1">
+        
+
+            <tr>
+                <td colspan="2">(1,1)</td><!-- colspan: 차지할 컬럼의 수-->
+                <td>(1,3)</td>
+            </tr>
+            <tr>
+                <td>(2,1)</td>
+                <td>(2,2)</td>
+                <td rowspan="2">(2,3)</td>
+            </tr>
+            <tr>
+                <td>(3,1)</td>
+                <td>(3,2)</td>
+
+            </tr>
+
+    </table>
+    <p><a href="index.html">메인으로 이동</a></p>
+</body>
+</html>
+
