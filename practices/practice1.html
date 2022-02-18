@@ -6,27 +6,67 @@
 
 <style type="text/css" media="screen">
 
-	.td{font-family: "맑은 고딕", 돋음;}
-	.td{font-size: 0.75em;}
-	.td{color: #333;}
 	.tbl-ex{
-		padding-top: 10px;
+		font-family: "맑은 고딕", 돋음;
+		font-size: 0.75em;
+		color: #333;
+		margin-top: 10px;
+		margin-left: auto;
+		margin-right: auto;
+		border-style: solid;
+		border-color: #333;
+		border-collapse: collapse;
+		border-left: 0;		
+		border-right: 0;
 	}
 
+	
+	
+	th, td {
+		border-style: solid;
+		border-color: #333;
+		border-width:0.05cm;
+		padding: 8px;
+		border-left: 0;
+		border-right: 0;
+		border-style: dotted;
+		
+	}
+	th{
+		background-color: #999;
+		font-size: 1.1em;
+		color: #fff;
+		border-top: 2px;
+		border-bottom: 2px;
+	}
+	
+	
 
+	tr:hover{background-color: #fc6;}
+
+	.even{
+		background-color: #e8ecf6;
+	}
+
+	.l{
+		border-top: solid;
+	}
+	.classname{
+		border : none;
+	}
 
 
 </style>
 </head>
 <body>
-	<table class="tbl-ex" border="1">
+	<table class="tbl-ex">
 		<tr>
 			<th>형식</th>
 			<th>선택자 이름</th>
 			<th>스타일 적용 요소</th>
 			<th>호환성</th>
 		</tr>
-		<tr>
+		<tr class = "l" >
 			<td>a</td>
 			<td>HTML</td>
 			<td>모든 HTML에 적용</td>
@@ -38,7 +78,7 @@
 			<td>클래스로 정의해 준 HTML 태그</td>
 			<td>IE4, FF1,Safari 1, 크롬 1,오페라 3.5, CSS1</td>
 		</tr>
-		<tr>
+		<tr class = "classname">
 			<td>a.classname</td>
 			<td>종속 클래스</td>
 			<td>특정 HTML 태그에 종속된 클래스</td>
