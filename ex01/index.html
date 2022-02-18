@@ -4,9 +4,26 @@
 		<title>Bit Lounge</title>
 		<meta http-equiv="Content-Type"
 			content="text/html; charset=UTF-8"/>
+		<!-- 내부 CSS, Page CSS -->
+		<style>
+			h1 {
+				color: green;
+			}
+		</style>
+		<style>
+			p{
+				color : gray;
+			}
+		</style>
+		<!-- 외부 CSS-->
+		<link rel = "stylesheet"
+			href="./css/style.css" />
 	</head>
 	<body>
-		<h1>Welcome to the Lounge</h1>
+		<!-- inline style
+			HTML 요소에 직접 스타일 부여
+			웹 표준 준수에는 가장 부적합, 추천 안함-->
+		<h1 style="color : red; background-color : gray;">Welcome to the Lounge</h1>
 		<img src ="./images/drinks.gif">
 		<!-- 절대경로 :
 			/ex01/images/drinks.gif
@@ -21,7 +38,8 @@
 
 		<p>3층에서 바로 찾을 수 있어요.</p>
 
-		<a href="table.html">테이블 연결</a>
+		<p><a href="table.html">테이블 연결</a></p>
+		<p><a href="form.html"></a></p>
 	</body>
 
 

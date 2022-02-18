@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>멤버십 가입</title>
+</head>
+<body>
+    <h1>멤버십 가입</h1>
+    <!-- 중요 속성: action - 처리할 페이지
+                    method- 요청 방식(GET, POST)-->
+    <form name="registerForm">
+        <fieldset><!-- 입력 양식의 그룹-->
+            <legend>가입양식</legend>
+            <label for="userid">아이디</label>
+            <!-- name: 서버로 전송될 때 파라미터명으로 사용됨 -->
+            <!-- id : 페이지 내에서 요소를 제어할 때-->
+            <input type ="text"    
+                name="userid"
+                id="userid" /><br />
+            <label for = "password">비밀번호</label>
+            <input type = "password"
+                name = "password"
+                id="password" /><br />
+            <labe for ="code" />
+            <input type ="text"
+                name = "code"
+                id = "code" disabled /><br />   <!-- disabled 사용시 입력 불가됨-->
+
+            <label>성별</label>
+            <!-- radio : 같은 이름의 데이터 중, 한 개만 선택 -->
+            <input type="radio" 
+                name="sex" value="male">남성
+            <input type="radio" 
+                name="sex" value="female">여성
+                <!-- for을 사용하지 않은 이유 : 우리가 어떤 것을 명확하게 선택할지 모르기 때문에 / for에 관한것 조사해볼 필요 있음-->
+        <br />
+        <label>선호 음료</label>
+        <!-- 체크박스 : 같은 이름의 데이터 중 여러개 선택
+                전송시 문자열 배열 전송-->
+        <input type ="checkbox"
+            name ="favorite"
+            value ="A"> 아메리카노
+        <input type ="checkbox"
+            name ="favorite"
+            value ="L"> 라떼
+        <input type ="checkbox"
+            name ="favorite"
+            value ="T"> 차
+        <br />
+        
+        <label>통신사</label> <!-- 서버에 전송될 때 파라미터의 이름은 telecom으로 전달됨-->
+        <select name ="telecom"><!-- 전송될 데이터 이름-->
+            <!-- 전송될 데이터 -->
+            <option value="S">SKT</option>
+            <option value="K">KT</option>
+            <option value="L">LGT</option>
+            <option value="E">ETC</option>
+        </select><br />
+
+        <input type="submit" value="가입" />  <!-- 서버로 데이터 전송-->
+        <input type="reset" value="다시작성"> <!-- 가입 폼을 초기화-->
+
+        </fieldset>
+    </form>
+</body>
+</html>

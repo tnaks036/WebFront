@@ -4,46 +4,172 @@
     <meta http-equiv="Content-Type"
       content="text.html; charset=UTF-8"/>
       <title>Bit Lounge 건강음료</title>
+      <lin rel="stylesheet"
+        href="./css/style.css" />
+      <style>
+        
+        /* 아이디 선택자 */ 
+       #green{
+         color: green;
+       }
+
+       #blue{
+         color: blue;
+       }
+
+       #purple{
+         color: purple;
+       }
+
+       #red{
+         color: red;
+       }
+      
+      /*  클래스 선택자 . */
+      .beverage {
+        padding: 10px;  /* 내부 여백을 10px */
+      }
+
+      /* class=beverage  + class =green*/
+      .beverage.green {   
+        /* background-color: #00FF0020; */
+        background-color: rgba(0, 255, 00, 0.1); /* (투명도 0~1 실수)*/
+      }
+
+      .beverage.blue {
+        background-color:  rgba(0, 0, 255, 0.1)
+      }
+
+      .beverage.purple {
+        
+        background-color: #91379120;
+        /* background-color: rgba(127, 0, 127, 0.1) */
+      }
+
+      .beverage.red {
+        background-color: rgba(255, 0, 0, 0.1)
+      }
+
+
+      /* 가상 클래스 */
+
+      /* active(클릭), hover(마우스 올라감)
+        link(링크가 걸린 상태: A), visited(방문한 페이지: A) */
+      h2:hover {  /*마우스가 올라갔을 때 */
+        color: black;
+      }
+
+      h2.active{ /* 클릭했을 때 */
+        color: red;
+      }
+    
+      /* 구조 선택자 */
+      .menu > li:first-child{
+        background-color: rgba(0,128,0, 0.1);
+      }
+
+      .munu > li:nth-child(2){
+        background-color: rgba(0, 0, 255, 0.1);
+      }
+
+      .menu > li:nth-child(3){
+        background-color: rgba(128, 0, 128, 0.1);
+      }
+
+      .menu > :last-child{
+        background-color: rgba(255,0, 0, 0.1);
+      }
+
+      /* border 속성  */
+
+      .beverage{
+        /* border-width: 3px;
+        border-style: solid; 
+        
+        border-color: gray; */
+
+        /* solid = 실선 */
+        
+        border : 3px dotted gray;
+  
+      }
+
+        /* border-radius 속성 */
+        .seller {     /* 좌상단을 기준으로 돌리면 된다 */
+          /* border-radius: 10px 20px 30px 40px; */
+          border-radius: 10px 30px;
+
+          border-radius: 50%;
+        }
+      </style>
   </head>
   <body>
+    <header>
     <h1>건강음료</h1>
-    
+  </header>
+  <nav> <!-- 사이트 네비게이션: 메뉴 --> 
+    <ul class="menu">
+      <li><a href = "#green">Green</a></li>
+      <li><a href = "#blue">Blue</a></li>
+      <li><a href ="#purple">Purple</a></li>
+      <li><a href = "#red">Red</a></li>
+    </ul>
+  </nav>
+  <aritlce>
+
     <!-- 각 음료를 공간 점유 태그(div)로 묶어 보자 -->
     <div>
         <h2>판매자</h2>
-        <img src ="./images/Penguins.jpg" />
+        <img class= "seller" 
+        src ="./images/Penguins.jpg" />
     </div>
     <!-- 각 음료를 -->
-    <div>
-      <h2>Green Tea Cooler</h2>
-      <!-- alt 속성 : 이미지가 없을 때 출력할 대체 텍스트 -->
-      <img src="./images/green.jpg" 
-      alt="Green Tea Cooler" 
-      title="Green Tea Cooler" />
-      <p>Chock full of vitamins and minerals, this elixir combines the healthful benefits of green tea with a twist of chamomile blossoms and ginger root.</p>
-  </div>
-  <div>
-      <h2>Raspberry Ice Concentration</h2>
-      <img src ="./images/lightblue.jpg" 
-      alt= "Raspberry Ice Concentration"
-      title="Raspberry Ice Concentration" />
-      <p>Combining raspberry juice with lemon grass, citrus peel and rosehips, this icy drink will make your mind feel clear and crisp.</p>
-  </div>
-  <div> 
-      <h2>Blueberry Bliss Elixir</h2>
-      <img src="./images/blue.jpg" 
-      alt= "Blueberry Bliss Elixir" 
-      title="Blueberry Bliss Elixir"/>
-      <p>Blueberries and cherry essence mixed into a base of elderflower herb tea will put you in a relaxed state of bliss in no time.</p>
-  </div>
-  <div>
-    <h2>Cranberry Antioxidant Blast</h2>
-    <img src ="./images/red.jpg" 
-    alt="Cranberry Antioxidant Blast"
-    title="Cranberry Antioxidant Blast"/>
-    <p>Wake up to the flavors of cranberry and hibiscus in this vitamin C rich elixir.</p>
-  </div>
+    <section>
+      <div id="green" class = "green beverage">
+        <h2>Green Tea Cooler</h2>
+        <!-- alt 속성 : 이미지가 없을 때 출력할 대체 텍스트 -->
+        <img src="./images/green.jpg" 
+        alt="Green Tea Cooler" 
+        title="Green Tea Cooler" />
+        <p>Chock full of vitamins and minerals, this elixir combines the healthful benefits of green tea with a twist of chamomile blossoms and ginger root.</p>
+      </div>
+    </section>
+
+    <section>
+      <div id="blue" class = "blue beverage">
+        <h2>Raspberry Ice Concentration</h2>
+        <img src ="./images/lightblue.jpg" 
+        alt= "Raspberry Ice Concentration"
+        title="Raspberry Ice Concentration" />
+        <p>Combining raspberry juice with lemon grass, citrus peel and rosehips, this icy drink will make your mind feel clear and crisp.</p>
+      </div>
+    </section>
+
+    <section>
+      <div id="purple" class="purple beverage"> 
+        <h2>Blueberry Bliss Elixir</h2>
+        <img src="./images/blue.jpg" 
+        alt= "Blueberry Bliss Elixir" 
+        title="Blueberry Bliss Elixir"/>
+        <p>Blueberries and cherry essence mixed into a base of elderflower herb tea will put you in a relaxed state of bliss in no time.</p>
+      </div>
+    </section>
+
+    <section>
+      <div id = "red" class = "red beverage">
+      <h2>Cranberry Antioxidant Blast</h2>
+      <img src ="./images/red.jpg" 
+      alt="Cranberry Antioxidant Blast"
+      title="Cranberry Antioxidant Blast"/>
+      <p>Wake up to the flavors of cranberry and hibiscus in this vitamin C rich elixir.</p>
+      </div>
+    </section>
+  </aritlce>
+  <nav>
     <p><a href="index.html">메인으로 돌아가기</a></p>
+  </nav>
+
+    <footer>&copy; Bit Lounge, 2022</footer>
   </body>
 
 </html>

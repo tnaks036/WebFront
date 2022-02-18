@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+/* 전체 선택자 : 모든 HTML 태그를 선택 */
+
+/* * {
+    margin:0;
+    padding: 0; 
+
+    color: gray;
+} */
+
+
+h1{
+    color : blue
+}
+
+/* 태그 선택자: 모든 선택된 태그 */ /* nav tag와 seciton tag를 선택*/
+/* 선택자를 여러개 선택할 때 ","로 구분하면 됨 */
+nav, section{
+    margin: 10px 20px;
+}
+/* id 선택자 : 특정 아이디를 가진 요소 선택 # */
