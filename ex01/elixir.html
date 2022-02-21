@@ -101,6 +101,48 @@
 
           border-radius: 50%;
         }
+        /*display vs visibility */
+        /* .seller{ */
+          /* display : 공간 점유 방식 결정
+          none, block, inline, inline-block */
+          /* display: none; */
+          /* visibility: 화면 표시 여부 결정;
+            -> 공간 점유는 그대로 */
+          /* visibility: hidden; */
+        /* } */
+
+
+        /* backgorund 속성 */
+        body{
+          /* background-image: url("./images/Landscape.jpg");
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-position: bottom;
+          background-size: 100%; */
+          /* background: url("./images/Landscape.jpg") bottom / 100% no-repeat fixed lightgrey; */
+          /* 인자 순서 : image position / size repeat attachment color*/
+        }
+
+        .menu > li{
+          float: left;
+          list-style-type: none; /* 불릿 문자 스타일*/
+          width: 100px; /* 요소의 너비 */
+          height: 25px; /* 요소의 높이 */
+          text-align: center; /* 텍스트 중앙 정렬 */
+          margin-right: 5px;
+        }
+
+        .menu{
+          margin-bottom: 10px;
+        }
+        article{
+          clear : both; /* article의 floating 속성을 초기화*/
+        }
+
+        .beverage img{
+          float: left;
+          margin-right: 20px;
+        }
       </style>
   </head>
   <body>
@@ -115,7 +157,7 @@
       <li><a href = "#red">Red</a></li>
     </ul>
   </nav>
-  <aritlce>
+  <article>
 
     <!-- 각 음료를 공간 점유 태그(div)로 묶어 보자 -->
     <div>
@@ -164,7 +206,7 @@
       <p>Wake up to the flavors of cranberry and hibiscus in this vitamin C rich elixir.</p>
       </div>
     </section>
-  </aritlce>
+  </article>
   <nav>
     <p><a href="index.html">메인으로 돌아가기</a></p>
   </nav>
