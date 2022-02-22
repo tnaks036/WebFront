@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+        <title>JS Cart</title>
+        <style>
+            #list li {
+                height: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <h1>Shopping List</h1>
+        </div>
+        <div id="cart-list">
+            <ul id="list">
+                <li>무</li>
+                <li>배추</li>
+                <li>쪽파</li>
+                <li>고춧가루</li>
+            </ul>
+        </div>
+        <div id="cart-input">
+            <input id="item"><button id="btn-add">추가</button>
+        </div>
+        <div id="footer">
+            &copy;Bit Academy
+        </div>
+    </body>
+    <script>
+    function addItem() {
+        let itemInput = document.getElementById("item");
+        // 앞 뒤 공백 제거
+        let item = itemInput.value.trim();
+
+        if (item.length > 0) {
+            console.log("추가할 아이템:", item);
+
+            // 추가할 부모 선택 # list
+            let container = document.getElementById("list");
+
+            // 추가할 요소 생성 : createElement
+            let itemNode = document.createElement("li"); // list에 appdend child를 통해 li를 자식으로 만들어야함
+            itemNode.innerText = item;
+
+            // 안쪽에 도구 상자 추가
+            let toolbar = document.createElement("div")
+            toolbar.style.display = "inline";
+            let delBtn = document.createElement("button");
+            delBtn.innerText = "삭제";
+            delBtn.style.cssFloat = 'right';
+            toolbar.appendChild(delBtn); 
+
+            // 삭제를 itemnode에 추가해줘야 표시가 됨
+            itemNode.appendChild(toolbar);
+            container.appendChild(itemNode);
+
+
+            delBtn.addEventListener("click", function(event){
+                console.log("이벤트 발생 객체:", event.target);
+                // 삭제가 event.target > 얘의 부모노드의 부모노드가 삭제할 item임
+                // 삭제할 노드 
+                let removeItem = event.target.parentNode.parentNode;
+                console.log("삭제할 노드:", removeItem);
+                let parent = removeItem.parentNode; // 부모
+                parent.removeChild(removeItem);
+                // ul로 부터 remove item을 함
+
+
+            });
+            // 입력상자 초기화, 포커스
+            itemInput.value = "";  // 이것 덕분에 초기화가 됨
+            itemInput.focus();
+
+            
+
+        }
+    }
+
+        // onload(페이지 로드가 끝났을 때) -> 초기화 
+        window.addEventListener("load", function(event) {
+            // 쇼핑 목록 초기화
+            let cartItems = document.querySelectorAll("#list > li");
+            console.log("items:", cartItems);
+            for (let i=0 ; i < cartItems.length; i++){
+                // 부모로부터 제거
+                cartItems[i].parentNode.removeChild(cartItems[i]);
+                //특정 자식의 부모의 노드에서 자식을 삭제해라(어떤 자식)
+            }
+
+
+            // btn-add 버튼에 이벤트 리스너 부착
+            document.getElementById("btn-add")
+                .addEventListener("click", addItem);
+        });
+    </script>
+</html>

@@ -32,8 +32,8 @@ console.log(Boolean(2022), Boolean(0)); // number
 
 // Reackt, Vue.js
 
-console.log(true && "JavaScript");  // JavaScript
-console.log(false && "JavaScript");  // flase
+console.log(true && "JavaScript");  // JavaScript   ->  T&T :(true 둘다 비어있지 않았기에 값을 표시?) -> 앞에 참 -> 뒤에 값이 있으니 뒤에값 표시
+console.log(false && "JavaScript");  // flase    -> T&&F : false 하나의 값이 비어있기에 flase
 
-console.log(true || "JavaScript"); // true
-console.log(false || "JavaScript"); // JavaScript
+console.log(true || "JavaScript"); // true  -> 둘다 참을 표시
+console.log(false || "JavaScript"); // JavaScript -> false와 javascript가 있으니 ㅓ

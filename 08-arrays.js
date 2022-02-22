@@ -101,3 +101,4 @@ fruits.sort(function(v1, v2) {
     if(v1 == v2) return 0; // 0-> tnstjrk rkxek
 });
 console.log("SORT DESC:", fruits);
+// 기본원리 : 어느 것이 앞인가, 어느 것이 뒤인가를 반복적으로 확인하는 것임
