@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Ajax Test</title>
+    <!-- jQuery-->
+    <script src="./scripts/jquery-3.6.0.js"></script>
+    <style>
+    .poster{
+        width: 100px;
+    }
+    </style>
+
+</head>
+<body>
+    <button id ="btnCallSnippet">HTML 조각 불러오기</button>
+    <button id ="btnCallMovies">영화 목록 불러오기</button>
+
+    <!-- HTML 조각 불러오기 결과-->
+    <div id="info"></div>  <!-- 조각을 여기에 저장할 것임 -->
+
+    <!-- #btnCallMovies 결과-->
+    <table id = "list" border="1" width="640">
+
+    </table>
+</body>
+<script>
+    $(document).ready(function(event) {
+        // #btnCallSnippet 버튼에 click 이벤트 추가
+        $("#btnCallSnippet").on("click", function(event){
+            // Ajax 수행
+            $.ajax({  // java script 객체 형태로 저장됨
+                url : "snippet.html",       //요청 url
+                type: "GET",                // 요청 방식
+                dataType: " text",           // 서버에 전달되는 데이터 타입
+                success: function(response){
+                    // 요청 성공시 수행되는 callback 함
+                    console.log(response);
+                    $("#info").html(response);
+                    // .html() -> 괄호 안에 있는 것을 html 형식으로 집어넣는다 : 
+                    //   .text() -> 괄호 안에 있는 것을 text로 집어넣는다
+                },
+                error: function(request, status, error){
+                    console.error("요청 정보:", request)
+                    console.error("status:", status)
+                    console.error("ERROR:",error)
+
+                }
+            })
+
+            })
+        
+        $("#btnCallMovies").on("click", function(event){
+            $.ajax({
+                url : "http://localhost:3000/movies",
+                type : "GET",
+                dataType : "json",
+                success: function(response){
+                    console.log(response)
+                    // json 내부의 movies 배열
+                    let movies = response.movies;
+                    
+                    for(let i = 0; i<movies.length; i++){
+                        // 개별 영화정보
+                        let movie = movies[i];
+                        console.log("movie:", movie);
+                        
+                        // 개별 영화 정보를 바탕으로 tr 생성
+                        let title = movie.title;
+                        let director = movie.director;
+                        let movieId = movie.id;
+
+                        let poster = "http://localhost:3000/images/" 
+                        + movie.image;
+
+                        let tr = $("<tr>");
+                        // 내부 콘텐츠 구성
+                        let htmlString = `
+                            <td><img class = "poster" src="${poster}"></td>
+                            <td>${title}</td>
+                            <td>${director}</td>`;
+                        tr.html(htmlString);
+                
+                        // 테이블에 추가
+                        $("#list").append(tr);
+                    }
+            },
+            error: function(request, status, error){
+                console.error("요청정보:", reqest);
+                console.error("status:", status);
+                console.error("ERROR:", error);
+            }
+                
+
+            
+            })
+
+
+        })
+
+    });
+</script>
+</html>
